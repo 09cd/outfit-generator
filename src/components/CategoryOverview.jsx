@@ -26,7 +26,7 @@ export default function CategoryOverview({
                         />
                     ))
                 ) : (
-                    <p>No {description} uploaded</p>
+                    <p>no {description} uploaded</p>
                 )}
             </div>
         </div>
