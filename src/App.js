@@ -11,10 +11,10 @@ function App() {
         shoes: [],
     });
 
-    const handleImageUpload = (category, image) => {
+    const handleImageUpload = (category, images) => {
         setCategories((prevCategories) => ({
             ...prevCategories,
-            [category]: [...prevCategories[category], image],
+            [category]: [...prevCategories[category], ...images],
         }));
     };
 

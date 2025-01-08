@@ -1,5 +1,6 @@
 .uploader {
     &__image-preview {
+        object-fit: cover;
         width: 150px;
         height: 150px;
     }
