@@ -1,10 +1,9 @@
 import "./ImageUploader.scss";
 
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 
-export default function ImageUploader({ onImageUpload, category }) {
+const ImageUploader = forwardRef(({ onImageUpload, category }, ref) => {
     const [imagePreviews, setImagePreviews] = useState([]);
-    const [imageData, setImageData] = useState([]);
     const fileInputRef = useRef(null);
 
     function handleImageChange(event) {
@@ -20,23 +19,21 @@ export default function ImageUploader({ onImageUpload, category }) {
 
                 if (previews.length === files.length) {
                     setImagePreviews((prev) => [...prev, ...previews]);
-                    setImageData((prev) => [...prev, ...data]);
+                    onImageUpload(category, data);
                 }
             };
             reader.readAsDataURL(file);
         });
     }
 
-    function handleSaveImage() {
-        if (imageData.length > 0) {
-            onImageUpload(category, imageData);
+    useImperativeHandle(ref, () => ({
+        resetUploader: () => {
             setImagePreviews([]);
-            setImageData([]);
-            fileInputRef.current.value = null;
-        } else {
-            alert("Kein Bild ausgewählt......");
-        }
-    }
+            if (fileInputRef.current) {
+                fileInputRef.current.value = null;
+            }
+        },
+    }));
 
     return (
         <div className="uploader">
@@ -48,17 +45,17 @@ export default function ImageUploader({ onImageUpload, category }) {
                 ref={fileInputRef}
             />
             <div>
-                {imagePreviews &&
-                    imagePreviews.map((preview, index) => (
-                        <img
-                            key={index}
-                            src={preview}
-                            alt={`Preview ${index}`}
-                            className="uploader__image-preview"
-                        />
-                    ))}
+                {imagePreviews.map((preview, index) => (
+                    <img
+                        key={index}
+                        src={preview}
+                        alt={`Preview ${index}`}
+                        className="uploader__image-preview"
+                    />
+                ))}
             </div>
-            <button onClick={handleSaveImage}>Bilder speichern</button>
         </div>
     );
-}
+});
+
+export default ImageUploader;
