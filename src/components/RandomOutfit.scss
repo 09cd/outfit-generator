@@ -1,8 +1,38 @@
 .generation-section-message {
-    font-size: 24rem;
+    // font-size: 24rem; //eig
+
+    padding: 0 2rem;
+
+    font-size: 1rem;
+    // word-break: break-all;
+    cursor: default;
+
+    @media (min-width: 576px) {
+        font-size: 8rem;
+        word-break: normal;
+        padding: 0;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 12rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 16rem;
+    }
+
+    @media (min-width: 1400px) {
+        font-size: 24rem;
+    }
 
     span {
+        font-style: italic;
         font-size: 1rem;
+        word-break: normal;
+
+        @media (min-width: 576px) {
+            font-style: normal;
+        }
 
         &:hover {
             cursor: pointer;

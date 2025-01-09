@@ -34,7 +34,8 @@ export default function RandomOutfit({ categories }) {
         <>
             {isWardrobeEmpty ? (
                 <div className="generation-section-message">
-                    add some clothes first{" "}
+                    add some clothes <br />
+                    first{" "}
                     <span onClick={() => navigate("/garderobe")}>(here)</span>
                 </div>
             ) : (
