@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// import ImageUploadSection from "./components/ImageUploadSection";
 import NavigationBar from "./components/NavigationBar";
-import CategoryOverviewSection from "./components/CategoryOverviewSection";
-// import RandomOutfit from "./components/RandomOutfit";
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage";
+import GarderobePage from "./pages/GarderobePage";
 
 function App() {
     const [categories, setCategories] = useState({
@@ -29,17 +27,15 @@ function App() {
                 <Route
                     path="/garderobe"
                     element={
-                        <CategoryOverviewSection categories={categories} />
-                    }
-                />
-                <Route
-                    path="/"
-                    element={
-                        <HomePage
+                        <GarderobePage
                             categories={categories}
                             onSaveImages={handleSaveImages}
                         />
                     }
+                />
+                <Route
+                    path="/"
+                    element={<HomePage categories={categories} />}
                 />
             </Routes>
         </Router>

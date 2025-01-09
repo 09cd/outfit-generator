@@ -1,0 +1,51 @@
+.generation-section-message {
+    font-size: 24rem;
+
+    span {
+        font-size: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.generation-section {
+    margin: 0 2rem;
+    width: 100%;
+
+    .generation-results {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        &__image {
+            object-fit: cover;
+            width: 12rem;
+            height: 12rem;
+        }
+
+        &__placeholder {
+            width: 12rem;
+            height: 12rem;
+            border: 1px solid rgb(238, 238, 238);
+        }
+
+        .result-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        color: rgb(238, 238, 238);
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
