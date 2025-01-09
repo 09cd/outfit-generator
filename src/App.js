@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import ImageUploadSection from "./components/ImageUploadSection";
+// import ImageUploadSection from "./components/ImageUploadSection";
 import NavigationBar from "./components/NavigationBar";
 import CategoryOverviewSection from "./components/CategoryOverviewSection";
+// import RandomOutfit from "./components/RandomOutfit";
+import HomePage from "./components/HomePage";
 
 function App() {
     const [categories, setCategories] = useState({
@@ -33,7 +35,10 @@ function App() {
                 <Route
                     path="/"
                     element={
-                        <ImageUploadSection onSaveImages={handleSaveImages} />
+                        <HomePage
+                            categories={categories}
+                            onSaveImages={handleSaveImages}
+                        />
                     }
                 />
             </Routes>
