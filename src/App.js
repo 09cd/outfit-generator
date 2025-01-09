@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import ImageUploadSection from "./components/ImageUploadSection";
-import Header from "./components/NavigationBar";
+import NavigationBar from "./components/NavigationBar";
 import CategoryOverviewSection from "./components/CategoryOverviewSection";
 
 function App() {
@@ -20,20 +21,23 @@ function App() {
     };
 
     return (
-        <>
-            <Header />
-
-            <ImageUploadSection onSaveImages={handleSaveImages} />
-
-            {/* <CategoryOverview category={categories.tops} description="tops" />
-            <CategoryOverview
-                category={categories.bottoms}
-                description="bottoms"
-            />
-            <CategoryOverview category={categories.shoes} description="shoes" /> */}
-
-            <CategoryOverviewSection categories={categories} />
-        </>
+        <Router>
+            <NavigationBar />
+            <Routes>
+                <Route
+                    path="/garderobe"
+                    element={
+                        <CategoryOverviewSection categories={categories} />
+                    }
+                />
+                <Route
+                    path="/"
+                    element={
+                        <ImageUploadSection onSaveImages={handleSaveImages} />
+                    }
+                />
+            </Routes>
+        </Router>
     );
 }
 

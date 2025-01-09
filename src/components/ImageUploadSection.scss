@@ -1,0 +1,35 @@
+.upload-section {
+    padding: 0 2rem 2rem 2rem;
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        margin-bottom: 2rem;
+
+        .image-upload {
+            h2 {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    button {
+        padding: 0.5rem;
+        background-color: transparent;
+        border: 2px rgb(238, 238, 238) solid;
+        border-radius: 1rem;
+        color: rgb(238, 238, 238);
+        width: 8rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .success-message {
+        margin-left: 2rem;
+        font-size: 0.8rem;
+    }
+}

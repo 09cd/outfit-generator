@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 
 import ImageUploader from "./ImageUploader";
+import "./ImageUploadSection.scss";
 
 export default function ImageUploadSection({ onSaveImages }) {
     const [pendingUploads, setPendingUploads] = useState({
@@ -37,35 +38,43 @@ export default function ImageUploadSection({ onSaveImages }) {
     };
 
     return (
-        <div>
-            <h2>Tops</h2>
-            <ImageUploader
-                category="tops"
-                onImageUpload={(category, images) =>
-                    handleImageUpload(category, images)
-                }
-                ref={uploaderRefs.tops}
-            />
+        <div className="upload-section">
+            <div className="upload-section__categories">
+                <div className="image-upload">
+                    <h2>(tops)</h2>
+                    <ImageUploader
+                        category="tops"
+                        onImageUpload={(category, images) =>
+                            handleImageUpload(category, images)
+                        }
+                        ref={uploaderRefs.tops}
+                    />
+                </div>
 
-            <h2>Bottoms</h2>
-            <ImageUploader
-                category="bottoms"
-                onImageUpload={(category, images) =>
-                    handleImageUpload(category, images)
-                }
-                ref={uploaderRefs.bottoms}
-            />
+                <div className="image-upload">
+                    <h2>(bottoms)</h2>
+                    <ImageUploader
+                        category="bottoms"
+                        onImageUpload={(category, images) =>
+                            handleImageUpload(category, images)
+                        }
+                        ref={uploaderRefs.bottoms}
+                    />
+                </div>
 
-            <h2>Shoes</h2>
-            <ImageUploader
-                category="shoes"
-                onImageUpload={(category, images) =>
-                    handleImageUpload(category, images)
-                }
-                ref={uploaderRefs.shoes}
-            />
+                <div className="image-upload">
+                    <h2>(shoes)</h2>
+                    <ImageUploader
+                        category="shoes"
+                        onImageUpload={(category, images) =>
+                            handleImageUpload(category, images)
+                        }
+                        ref={uploaderRefs.shoes}
+                    />
+                </div>
+            </div>
 
-            <button onClick={handleSaveImages}>Alle Bilder speichern</button>
+            <button onClick={handleSaveImages}>Save</button>
         </div>
     );
 }

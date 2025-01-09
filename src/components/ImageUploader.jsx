@@ -44,16 +44,17 @@ const ImageUploader = forwardRef(({ onImageUpload, category }, ref) => {
                 onChange={handleImageChange}
                 ref={fileInputRef}
             />
-            <div>
-                {imagePreviews.map((preview, index) => (
-                    <img
-                        key={index}
-                        src={preview}
-                        alt={`Preview ${index}`}
-                        className="uploader__image-preview"
-                    />
-                ))}
-            </div>
+            {imagePreviews.length > 0 && (
+                <div className="uploader__image-preview">
+                    {imagePreviews.map((preview, index) => (
+                        <img
+                            key={index}
+                            src={preview}
+                            alt={`Preview ${index}`}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 });

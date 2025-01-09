@@ -1,8 +1,11 @@
-.uploader {
-    &__image-preview {
+.garderobe-section {
+    margin: 0 2rem;
+
+    .images {
+        margin: 2rem 0;
+
         display: flex;
         flex-wrap: wrap;
-        margin-top: 2rem;
 
         img {
             object-fit: cover;
