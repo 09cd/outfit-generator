@@ -20,6 +20,13 @@ function App() {
         }));
     };
 
+    const handleDeleteImage = (category, index) => {
+        setCategories((prevCategories) => ({
+            ...prevCategories,
+            [category]: prevCategories[category].filter((_, i) => i !== index),
+        }));
+    };
+
     return (
         <Router>
             <NavigationBar />
@@ -30,6 +37,7 @@ function App() {
                         <GarderobePage
                             categories={categories}
                             onSaveImages={handleSaveImages}
+                            handleDeleteImage={handleDeleteImage}
                         />
                     }
                 />

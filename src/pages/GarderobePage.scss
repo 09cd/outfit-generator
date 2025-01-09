@@ -1,0 +1,10 @@
+.enter-delete-mode-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(238, 238, 238);
+    padding: 0.5rem 2rem 2rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
