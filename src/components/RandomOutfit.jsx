@@ -79,9 +79,7 @@ export default function RandomOutfit({ categories }) {
                             <div>(shoes)</div>
                         </div>
                     </div>
-                    <button onClick={generateRandomOutfit}>
-                        ( Generate Random Outfit )
-                    </button>
+                    <button onClick={generateRandomOutfit}>( Generate )</button>
                 </div>
             )}
         </>
