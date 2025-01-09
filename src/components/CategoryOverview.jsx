@@ -13,7 +13,7 @@ export default function CategoryOverview({
     };
 
     return (
-        <div className="garderobe-section">
+        <div className="wardrobe-section">
             <h3>(all {description})</h3>
             <div className="images">
                 {category.length > 0 ? (

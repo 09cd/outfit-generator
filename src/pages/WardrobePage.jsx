@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import "./GarderobePage.scss";
+import "./WardrobePage.scss";
 
 import ImageUploadSection from "../components/ImageUploadSection";
 import CategoryOverviewSection from "../components/CategoryOverviewSection";
 
-export default function GarderobePage({
+export default function WardrobePage({
     categories,
     onSaveImages,
     handleDeleteImage,

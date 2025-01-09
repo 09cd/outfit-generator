@@ -84,7 +84,7 @@ export default function ImageUploadSection({ onSaveImages }) {
                         </div>
                     </div>
 
-                    <button onClick={handleSaveImages}>Save</button>
+                    <button onClick={handleSaveImages}>[ Save ]</button>
                 </div>
             ) : (
                 <button className="add-new" onClick={handleAddNew}>

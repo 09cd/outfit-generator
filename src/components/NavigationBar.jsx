@@ -6,8 +6,8 @@ export default function Header() {
     return (
         <nav className="navbar">
             <Link to="/">Daniels Outfit Generator</Link>
-            <Link to="/garderobe" className="navbar__garderobe">
-                Garderobe
+            <Link to="/wardrobe" className="navbar__wardrobe">
+                Wardrobe
             </Link>
         </nav>
     );

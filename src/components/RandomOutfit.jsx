@@ -36,7 +36,7 @@ export default function RandomOutfit({ categories }) {
                 <div className="generation-section-message">
                     add some clothes <br />
                     first{" "}
-                    <span onClick={() => navigate("/garderobe")}>(here)</span>
+                    <span onClick={() => navigate("/wardrobe")}>(here)</span>
                 </div>
             ) : (
                 <div className="generation-section">

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
 import HomePage from "./pages/HomePage";
-import GarderobePage from "./pages/GarderobePage";
+import WardrobePage from "./pages/WardrobePage";
 
 function App() {
     const [categories, setCategories] = useState({
@@ -32,9 +32,9 @@ function App() {
             <NavigationBar />
             <Routes>
                 <Route
-                    path="/garderobe"
+                    path="/wardrobe"
                     element={
-                        <GarderobePage
+                        <WardrobePage
                             categories={categories}
                             onSaveImages={handleSaveImages}
                             handleDeleteImage={handleDeleteImage}
